@@ -23,7 +23,12 @@ app.use(express.json());
 const port = process.env.PORT || 3000
 
 
-
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "API is running 🚀"
+    });
+});
 
 //securty
 app.set('trust proxy', 1);
