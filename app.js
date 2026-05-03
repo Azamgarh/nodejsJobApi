@@ -36,9 +36,9 @@ app.get("/", (req, res) => {
 //     windowMs:15*60*100, //15 minute
 //     max:100, //limit each ip to 100 request
 // }))
-// app.use(cors());
-// app.use(xssclean());
-// app.use(helmet());
+ app.use(cors());
+ app.use(xssclean());
+ app.use(helmet());
 // //
 
 
