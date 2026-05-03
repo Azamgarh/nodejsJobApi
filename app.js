@@ -37,8 +37,8 @@ app.get("/", (req, res) => {
 //     max:100, //limit each ip to 100 request
 // }))
  app.use(cors());
- app.use(xssclean());
- //app.use(helmet());
+ //app.use(xssclean());
+ app.use(helmet());
 // //
 
 
