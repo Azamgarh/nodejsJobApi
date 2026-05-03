@@ -4,6 +4,14 @@ const {UnauthenticatedError}  = require('../errors');
 const bcrypt  = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const registerdemo = (req, res) => {
+    res.json({
+        success: true,
+        message: "API inner running 🚀"
+    });
+};
+
+
 const register = async (req, res)=>{
     try{
  const{name, email, password}= req.body;
@@ -68,5 +76,6 @@ res.status(500).json({msg:'Internal server error', error,  success: false,});
 
 module.exports ={
     register,
-    login
+    login,
+    registerdemo
 }
