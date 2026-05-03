@@ -3,4 +3,17 @@ dotenv.config();
 
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.DB_URL).then(()=>console.log("Database connected")).catch((err)=>console.log("Database not connected", err))
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.DB_URL, {
+      serverSelectionTimeoutMS: 10000
+    });
+
+    console.log("MongoDB Connected 🚀");
+  } catch (error) {
+    console.error("DB connection error:", error.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
